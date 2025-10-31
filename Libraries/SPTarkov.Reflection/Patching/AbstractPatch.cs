@@ -9,7 +9,7 @@ namespace SPTarkov.Reflection.Patching;
 /// <remarks>
 ///     A known limitation is that exceptions and logging are only sent to the console and are not color coded. There is no disk logging here.
 /// </remarks>
-public abstract class AbstractPatch
+public abstract class AbstractPatch : IRuntimePatch
 {
     /// <summary>
     ///     Method this patch targets
