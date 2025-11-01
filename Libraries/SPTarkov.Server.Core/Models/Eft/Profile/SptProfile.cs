@@ -17,13 +17,6 @@ public record SptProfile
     [JsonPropertyName("characters")]
     public Characters? CharacterData { get; set; }
 
-    /// <summary>
-    ///     No longer used as of 4.0.0
-    /// </summary>
-    [Obsolete("Replaced with CustomisationUnlocks")]
-    [JsonPropertyName("suits")]
-    public List<string>? Suits { get; set; }
-
     [JsonPropertyName("userbuilds")]
     public UserBuilds? UserBuildData { get; set; }
 
