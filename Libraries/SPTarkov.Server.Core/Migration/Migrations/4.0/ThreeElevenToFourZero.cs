@@ -7,7 +7,7 @@ using Range = SemanticVersioning.Range;
 namespace SPTarkov.Server.Core.Migration.Migrations;
 
 [Injectable]
-public class ThreeElevenToFourZero(Watermark watermark) : AbstractProfileMigration
+public sealed class ThreeElevenToFourZero(Watermark watermark) : AbstractProfileMigration
 {
     public string FromVersion
     {

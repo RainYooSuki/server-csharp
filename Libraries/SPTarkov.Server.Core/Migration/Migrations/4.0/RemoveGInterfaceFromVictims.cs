@@ -5,7 +5,7 @@ using SPTarkov.Server.Core.Utils;
 namespace SPTarkov.Server.Core.Migration.Migrations;
 
 [Injectable]
-public class RemoveGInterfaceFromVictims : AbstractProfileMigration
+public sealed class RemoveGInterfaceFromVictims : AbstractProfileMigration
 {
     public override string MigrationName
     {

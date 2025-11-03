@@ -7,7 +7,7 @@ using SPTarkov.Server.Core.Services;
 namespace SPTarkov.Server.Core.Migration.Migrations;
 
 [Injectable]
-public class InvalidPocketFix(DatabaseService databaseService) : AbstractProfileMigration
+public sealed class InvalidPocketFix(DatabaseService databaseService) : AbstractProfileMigration
 {
     public const string DEFAULT_POCKETS = "627a4e6b255f7527fb05a0f6";
     public const string UNHEARD_POCKETS = "65e080be269cbd5c5005e529";

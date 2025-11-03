@@ -9,7 +9,7 @@ namespace SPTarkov.Server.Core.Migration.Migrations;
 /// To these thus never having received them, re-add them here.
 /// </summary>
 [Injectable]
-public class ThreeTenMinorFixes : AbstractProfileMigration
+public sealed class ThreeTenMinorFixes : AbstractProfileMigration
 {
     public override string MigrationName
     {

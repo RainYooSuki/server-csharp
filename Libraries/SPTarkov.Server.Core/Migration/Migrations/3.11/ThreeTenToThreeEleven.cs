@@ -11,7 +11,7 @@ using Range = SemanticVersioning.Range;
 namespace SPTarkov.Server.Core.Migration.Migrations;
 
 [Injectable]
-public class ThreeTenToThreeEleven(
+public sealed class ThreeTenToThreeEleven(
     DatabaseService databaseService,
     // Yes, referencing the helpers directly causes a circular dependency. Too bad!
     IServiceProvider serviceProvider

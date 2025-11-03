@@ -9,7 +9,7 @@ using SPTarkov.DI.Annotations;
 namespace SPTarkov.Server.Core.Migration.Migrations;
 
 [Injectable]
-public class BuyRestrictionMaxStringToInt : AbstractProfileMigration
+public sealed class BuyRestrictionMaxStringToInt : AbstractProfileMigration
 {
     public override string MigrationName
     {

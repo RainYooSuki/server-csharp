@@ -4,7 +4,7 @@ using SPTarkov.DI.Annotations;
 namespace SPTarkov.Server.Core.Migration.Migrations;
 
 [Injectable]
-public class RemoveVitaltyFromProfile : AbstractProfileMigration
+public sealed class RemoveVitaltyFromProfile : AbstractProfileMigration
 {
     public override string MigrationName
     {
