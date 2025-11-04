@@ -10,9 +10,11 @@ public class Application(ISptLogger<Application> logger, IEnumerable<IOnLoad> on
 {
     public async Task Run()
     {
+        var cancellationTokenSource = new CancellationTokenSource();
+
         foreach (var onLoad in onloadComponents)
         {
-            await onLoad.OnLoad();
+            await onLoad.OnLoad(cancellationTokenSource.Token);
         }
 
         try

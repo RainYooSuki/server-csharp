@@ -3,6 +3,7 @@ using NUnit.Framework;
 using SPTarkov.DI;
 using SPTarkov.Server.Core.DI;
 using SPTarkov.Server.Core.Models.Spt.Mod;
+using SPTarkov.Server.Core.Services.Hosted;
 using SPTarkov.Server.Core.Utils;
 using SPTarkov.Server.Core.Utils.Logger.Handlers;
 using UnitTests.Mock;
@@ -37,7 +38,7 @@ public class DI
 
         var diHandler = new DependencyInjectionHandler(services);
 
-        diHandler.AddInjectableTypesFromTypeAssembly(typeof(App));
+        diHandler.AddInjectableTypesFromTypeAssembly(typeof(SPTStartupHostedService));
         diHandler.AddInjectableTypesFromTypeList(
             [
                 typeof(MockLogger<>), // TODO: this needs to be enabled but the randomizer needs to NOT be random, typeof(MockRandomUtil)
@@ -50,13 +51,15 @@ public class DI
 
         _serviceProvider = services.BuildServiceProvider();
 
+        var cancellationTokenSource = new CancellationTokenSource();
+
         foreach (var onLoad in _serviceProvider.GetServices<IOnLoad>())
         {
             if (onLoad is FileLogHandler)
             {
                 continue;
             }
-            onLoad.OnLoad().Wait();
+            onLoad.OnLoad(cancellationTokenSource.Token).Wait();
         }
     }
 

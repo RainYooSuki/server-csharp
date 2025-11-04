@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using SPTarkov.DI;
 using SPTarkov.Server.Core.Models.Spt.Mod;
+using SPTarkov.Server.Core.Services.Hosted;
 using SPTarkov.Server.Core.Utils;
 
 namespace HideoutCraftQuestIdGenerator;
@@ -19,7 +20,7 @@ public class HideoutCraftQuestIdGeneratorLauncher
             serviceCollection.AddSingleton<IReadOnlyList<SptMod>>([]);
             var diHandler = new DependencyInjectionHandler(serviceCollection);
             diHandler.AddInjectableTypesFromTypeAssembly(typeof(HideoutCraftQuestIdGeneratorLauncher));
-            diHandler.AddInjectableTypesFromTypeAssembly(typeof(App));
+            diHandler.AddInjectableTypesFromTypeAssembly(typeof(SPTStartupHostedService));
             diHandler.InjectAll();
             var serviceProvider = serviceCollection.BuildServiceProvider();
             serviceProvider.GetService<HideoutCraftQuestIdGenerator>().Run().Wait();
