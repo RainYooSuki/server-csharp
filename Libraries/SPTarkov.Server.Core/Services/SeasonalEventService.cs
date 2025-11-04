@@ -772,6 +772,11 @@ public class SeasonalEventService(
     protected void EnableHalloweenSummonEvent()
     {
         databaseService.GetGlobals().Configuration.EventSettings.EventActive = true;
+
+        if (SeasonalEventConfig.HostilitySettingsForEvent.TryGetValue("summon", out var botData))
+        {
+            ReplaceBotHostility(botData);
+        }
     }
 
     protected void ConfigureZombies(ZombieSettings zombieSettings)
