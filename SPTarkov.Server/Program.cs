@@ -142,7 +142,7 @@ public static class Program
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
                 ForwardLimit = null,
             };
-            forwardedHeadersOptions.KnownNetworks.Clear();
+            forwardedHeadersOptions.KnownIPNetworks.Clear();
             forwardedHeadersOptions.KnownProxies.Clear();
             app.UseForwardedHeaders(forwardedHeadersOptions);
 
