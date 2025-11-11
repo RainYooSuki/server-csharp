@@ -45,7 +45,7 @@ public class NotifierHelper(HttpServerHelper httpServerHelper)
         return new WsNotificationPopup
         {
             EventType = NotificationEventType.NotificationPopup,
-            EventId = new MongoId(),
+            EventIdentifier = new MongoId(),
             Image = config.BigImage,
             Message = messageId,
         };

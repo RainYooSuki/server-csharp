@@ -5,9 +5,6 @@ namespace SPTarkov.Server.Core.Models.Eft.Ws;
 
 public record WsNotificationPopup : WsNotificationEvent
 {
-    [JsonPropertyName("eventId")]
-    public MongoId EventId { get; set; }
-
     [JsonPropertyName("image")]
     public string Image { get; set; }
 
