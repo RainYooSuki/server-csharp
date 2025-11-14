@@ -52,13 +52,14 @@ public static class SPTWeb
 
             if (!string.IsNullOrEmpty(location) && Directory.Exists(Path.Combine(location, "wwwroot")))
             {
-                var modAssemblyName = modAssembly.GetName().Name;
-
-                logger.LogDebug(
-                    "Mod {modName} has a wwwroot, mapping to /{modAssemblyName}/",
-                    mod.ModMetadata.Name,
-                    modAssembly.GetName().Name
-                );
+                if (logger.IsEnabled(LogLevel.Debug))
+                {
+                    logger.LogDebug(
+                        "Mod {modName} has a wwwroot, mapping to /{modAssemblyName}/",
+                        mod.ModMetadata.Name,
+                        modAssembly.GetName().Name
+                    );
+                }
 
                 app.UseStaticFiles(
                     new StaticFileOptions
