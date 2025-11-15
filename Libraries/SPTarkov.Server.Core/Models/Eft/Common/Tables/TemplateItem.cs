@@ -433,7 +433,8 @@ public record TemplateItemProperties
     public double? DoubleActionAccuracyPenaltyMult { get; set; }
 
     [JsonPropertyName("ModesCount")]
-    public ListOrT<int>? ModesCount { get; set; }
+    //Todo: Fucked in the .Net 9 to .Net 10 migration? Needs fixing
+    public object? ModesCount { get; set; }
 
     [JsonPropertyName("DurabilityBurnModificator")]
     public double? DurabilityBurnModificator { get; set; }
