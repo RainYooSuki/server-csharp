@@ -21,7 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.IO.Hashing" Version="10.0.0" />
-    <PackageReference Include="FastCloner" Version="3.3.16" />
+    <PackageReference Include="FastCloner" Version="3.3.17" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\LICENSE" Pack="true" Visible="false" PackagePath="" />
