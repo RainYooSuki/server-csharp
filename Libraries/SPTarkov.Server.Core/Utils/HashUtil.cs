@@ -81,7 +81,7 @@ public sealed class HashUtil(RandomUtil _randomUtil)
         const int min = 1000000;
         const int max = 1999999;
 
-        return _randomUtil.Random.Next(min, max + 1);
+        return _randomUtil.GetInt(min, max);
     }
 }
 

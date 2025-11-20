@@ -512,7 +512,7 @@ public class EliminationQuestGenerator(
         // Random distance with lower values more likely; simple distribution for starters...
         var distance = (int)
             Math.Floor(
-                Math.Abs(randomUtil.Random.NextDouble() - randomUtil.Random.NextDouble())
+                Math.Abs(randomUtil.GetSecureRandomNumber() - randomUtil.GetSecureRandomNumber())
                     * (1 + generationData.EliminationConfig.MaxDistance - generationData.EliminationConfig.MinDistance)
                     + generationData.EliminationConfig.MinDistance
             );
